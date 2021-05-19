@@ -72,7 +72,7 @@
             <div class="myTasks" v-if="myTasks.length > 0">
                 <div class="task" v-for="(task,index) in myTasks">
                     <input type="text" v-model="myTasks[index]" v-text="task">
-                    <i class="fas fa-times-circle fa-sm fa-fw" @click="binTask(index)"></i>
+                    <i class="fas fa-trash" @click="binTask(index)"></i>
                     <i class="fas fa-check-circle"></i>
                 </div>
                 
