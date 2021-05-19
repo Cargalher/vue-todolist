@@ -4,6 +4,7 @@ const app = new Vue({
     data:{
         logo:'./img/logo.png',
         title: 'Todo List',
+        title2: 'Completed',
         newTask: '',
         myTasks: ['Learn HTML', 'Learn CSS', 'Learn JS', 'Learn Vue'],
     },

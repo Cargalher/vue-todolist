@@ -12,21 +12,33 @@
         <style>
           
             #root{
-                display: flex;
-                flex-direction:column;
-                justify-content: center;
-                align-items: center;
                 height: 100vh;
                 background-color: rgb(143, 202, 241); 
                
             }
-           
+            #site_header{
+                display: flex;
+                flex-direction:column;
+                justify-content: center;
+                align-items: center;
+                padding: 70px;
+            }
+            #site_main{
+                display: flex;
+                
+                justify-content: center;
+                align-items: center;
+            }
             .white_container{
                 border-radius: 10px;
                 background-color: whitesmoke;
-               padding:10px 50px;
+                padding: 0px 12px 30px;
+               margin: 10px;
+             
                
             }
+           
+            
             .myTasks{
                 border-radius: 10px;
                 background-color: lightgray;
@@ -57,30 +69,50 @@
 <body>
 
     <div id="root">
-        <div class="logo">
-            <img width="300" :src="logo" alt="logo boolean">
-        </div>
-        <div class="add_task">
-            <input v-model= "newTask" type="text" name="" id="" placeholder="Add new tasks here">
-            <button @click= "addTask">Add task</button>
-            <label for="">Add a simple task to do</label>
-        </div>
-        
-        <div class="white_container">
-            <h2>{{title}}</h2>
+        <header id="site_header">
+             <div class="logo">
+                <img width="300" :src="logo" alt="logo boolean">
+            </div>
+            <div class="add_task">
+                <input v-model= "newTask" type="text" name="" id="" placeholder="Add new tasks here">
+                <button @click= "addTask">Add task</button>
+                <label for="">Add a simple task to do</label>
+            </div>
+        </header>
+        <main id="site_main">
+             <div class="white_container">
+                <h2>{{title}}</h2>
 
-            <div class="myTasks" v-if="myTasks.length > 0">
-                <div class="task" v-for="(task,index) in myTasks">
-                    <input type="text" v-model="myTasks[index]" v-text="task">
-                    <i class="fas fa-trash" @click="binTask(index)"></i>
-                    <i class="fas fa-check-circle"></i>
+                <div class="myTasks" v-if="myTasks.length > 0">
+                    <div class="task" v-for="(task,index) in myTasks">
+                        <input type="text" v-model="myTasks[index]" v-text="task">
+                        <i class="fas fa-trash" @click="binTask(index)"></i>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    
                 </div>
-                
+                <div class="noTasks" v-else>
+                    <p>You don't have anything to do, Insert some new tasks 📝</p>
+                </div>
             </div>
-            <div class="noTasks" v-else>
-                <p>You don't have anything to do, Insert some new tasks 📝</p>
+            <div class="white_container">
+                <h2>{{title2}}</h2>
+
+                <div class="myTasks" v-if="myTasks.length > 0">
+                    <div class="task" v-for="(task,index) in myTasks">
+                        <input type="text" v-model="myTasks[index]" v-text="task">
+                        <i class="fas fa-trash" @click="binTask(index)"></i>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    
+                </div>
+                <div class="noTasks" v-else>
+                    <p>You don't have anything to do, Insert some new tasks 📝</p>
+                </div>
             </div>
-        </div>
+        </main>
+            
+           
            
     </div>
     <!-- VUE JS -->
