@@ -70,9 +70,11 @@
             <h2>{{title}}</h2>
 
             <div class="myTasks" v-if="myTasks.length > 0">
-                <div class="task" v-for="(task,index) in myTasks">{{task}}
-                    <i class="fas fa-times-circle fa-sm fa-fw" @click="binTask(index)" @click="editTask(index)"></i>
+                <div class="task" v-for="(task,index) in myTasks">
+                    <input type="text" v-model="myTasks[index]" v-text="task">
+                    <i class="fas fa-times-circle fa-sm fa-fw" @click="binTask(index)"></i>
                 </div>
+                
             </div>
             <div class="noTasks" v-else>
                 <p>You don't have anything to do, Insert some new tasks 📝</p>
