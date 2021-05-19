@@ -8,14 +8,46 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+        <style>
+            
+            #root{
+                display: flex;
+                flex-direction:column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: rgb(78, 184, 255); 
+            }
+           
+            .white_container{
+                border-radius: 10px;
+                background-color: whitesmoke;
+               padding:10px;
+            }
+            .myTasks{
+                border-radius: 10px;
+                background-color: lightgray;
+                padding:20px;
+                line-height: 40px;
+            }
+        </style>
 </head>
 <body>
+
     <div id="root">
-        <div class="myTasks">
-            <div class="task" v-for="(task,index) in myTasks">{{task}}
-                <i class="fas fa-times-circle fa-sm fa-fw"></i>
+        <div class="logo">
+            <img width="150" :src="logo" alt="logo boolean">
+        </div>
+        <div class="white_container">
+            <h2>{{title}}</h2>
+            <div class="myTasks">
+                <div class="task" v-for="(task,index) in myTasks">{{task}}
+                    <i class="fas fa-times-circle fa-sm fa-fw"></i>
+                </div>
             </div>
         </div>
+           
     </div>
     <!-- VUE JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
