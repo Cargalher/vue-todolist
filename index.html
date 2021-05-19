@@ -29,6 +29,9 @@
             </div>
         </header>
         <main id="site_main">
+
+
+
              <div class="white_container">
                 <h2>{{title}}</h2>
 
@@ -36,7 +39,7 @@
                     <div class="task" v-for="(task,index) in myTasks">
                         <input type="text" v-model="myTasks[index]" v-text="task">
                         <i class="fas fa-trash" @click="binTask(index)"></i>
-                        <i class="fas fa-check-circle" @click="addFinishedTask"></i>
+                        <i class="fas fa-check-circle" @click="addFinishedTask(index)"></i>
                     </div>
                     
                 </div>
@@ -44,20 +47,37 @@
                     <p>You don't have anything to do, Insert some new tasks 📝</p>
                 </div>
             </div>
+
+
+
+
+
             <div class="white_container">
                 <h2>{{title2}}</h2>
 
-                <div class="myCompletedTasks" v-if="myCompletedTasks.length > 0">
+                <!-- <div class="myCompletedTasks" v-if=" myTasks.length > 0">
+                    <div class="task" v-for="(task,index) in  myTasks">
+                       
+                        
+                      
+                    </div>
+                    
+                </div>
+                <div class="noTasks" v-else>
+                    <p>You don't have anything to do, Insert some new tasks 📝</p>
+                </div> -->
+
+                <div class="myTasks" v-if="myTasks.length > 0">
                     <div class="task" v-for="(task,index) in myCompletedTasks">
-                        <input type="text" v-model="myCompletedTasks[index]" v-text="task">
-                        <i class="fas fa-trash" @click="binTask(index)"></i>
-                        <i class="fas fa-check-circle"></i>
+                        
                     </div>
                     
                 </div>
                 <div class="noTasks" v-else>
                     <p>You don't have anything to do, Insert some new tasks 📝</p>
                 </div>
+
+
             </div>
         </main>
             

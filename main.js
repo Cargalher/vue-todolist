@@ -7,7 +7,7 @@ const app = new Vue({
         title2: 'Completed',
         newTask: '',
         myTasks: ['Learn HTML', 'Learn CSS', 'Learn JS', 'Learn Vue'],
-        myCompletedTasks: []
+        myCompletedTasks: ['']
     },
     methods:{
         addTask(){
@@ -19,8 +19,8 @@ const app = new Vue({
             this.myTasks.splice(index,1)
         },
         addFinishedTask(index){
-            this.myCompletedTasks.push(this.newTask)
-            this.newTask = ''
+            this.addTask.push(this.myCompletedTasks)
+            this.myCompletedTasks = ''
         }
     }
 });
