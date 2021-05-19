@@ -10,6 +10,10 @@ const app = new Vue({
     methods:{
         addTask(){
             this.myTasks.push(this.newTask)
+            this.newTask = ''
+        },
+        binTask(){
+
         }
     }
 })
