@@ -12,7 +12,9 @@
 <body>
     <div id="root">
         <div class="myTasks">
-            <i class="fas fa-times-circle fa-sm fa-fw"></i>
+            <div class="task" v-for="(task,index) in myTasks">{{task}}
+                <i class="fas fa-times-circle fa-sm fa-fw"></i>
+            </div>
         </div>
     </div>
     <!-- VUE JS -->
