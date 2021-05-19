@@ -12,8 +12,9 @@ const app = new Vue({
             this.myTasks.push(this.newTask)
             this.newTask = ''
         },
-        binTask(){
-
+        binTask(index){
+            console.log('Bin task n.' + index);
+            this.myTasks.splice(index,1)
         }
     }
-})
+});
