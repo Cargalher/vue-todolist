@@ -7,21 +7,29 @@ const app = new Vue({
         title2: 'Completed',
         newTask: '',
         myTasks: ['Learn HTML', 'Learn CSS', 'Learn JS', 'Learn Vue'],
-        myCompletedTasks: ''
+        myCompletedTasks: []
     },
     methods:{
         addTask(){
-            this.myTasks.push(this.newTask)
+            this.myTasks.unshift(this.newTask)
             this.newTask = ''
         },
         binTask(index){
             // console.log('Bin task n.' + index);
             this.myTasks.splice(index,1)
         },
-        addFinishedTask(index){
+        updateTask(){
+            alert('Task updated')
+        },
+        addFinishedTask(index, task){
+            this.myCompletedTasks.unshift(task)
             this.myTasks.splice(index,1)
-            this.myTasks.push(this.myCompletedTasks)
-            this.myCompletedTasks = ''
+        },
+        restoringTask(index,task){
+            // moving task inside the todo list
+            this.myTasks.unshift(task)
+            // remove the task
+            this.myCompletedTasks.splice(index,1)
         }
     }
 });

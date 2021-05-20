@@ -10,13 +10,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
    
-        <style>
-          
-           
-        </style>
 </head>
 <body>
-
+    
     <div id="root">
 
         <!-- header -->
@@ -52,10 +48,15 @@
             </div>
 
             <!-- container tasks completed -->
-            <div class="white_container">
+            <div class="white_container" v-if="myCompletedTasks.length > 0">
                 <h2>{{title2}}</h2>
-                <div class="myCompletedTasks">{{task}}</div>
+                <div v-for="(task, index) in myCompletedTasks">
+                    {{task}} <i class="fas fa-undo fa-sm fa-fw" @click="restoringTask(index,task)"></i>
+                </div>
             </div>
+
+
+
         </main>
             
     </div>
