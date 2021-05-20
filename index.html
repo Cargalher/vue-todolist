@@ -18,6 +18,8 @@
 <body>
 
     <div id="root">
+
+        <!-- header -->
         <header id="site_header">
              <div class="logo">
                 <img width="300" :src="logo" alt="logo boolean">
@@ -28,13 +30,14 @@
                 <label for="">Add a simple task to do</label>
             </div>
         </header>
+
+
+        <!-- Main -->
         <main id="site_main">
 
-
-
-             <div class="white_container">
+            <!-- container todo list -->
+            <div class="white_container">
                 <h2>{{title}}</h2>
-
                 <div class="myTasks" v-if="myTasks.length > 0">
                     <div class="task" v-for="(task,index) in myTasks">
                         <input type="text" v-model="myTasks[index]" v-text="task">
@@ -48,41 +51,13 @@
                 </div>
             </div>
 
-
-
-
-
+            <!-- container tasks completed -->
             <div class="white_container">
                 <h2>{{title2}}</h2>
-
-                <!-- <div class="myCompletedTasks" v-if=" myTasks.length > 0">
-                    <div class="task" v-for="(task,index) in  myTasks">
-                       
-                        
-                      
-                    </div>
-                    
-                </div>
-                <div class="noTasks" v-else>
-                    <p>You don't have anything to do, Insert some new tasks 📝</p>
-                </div> -->
-
-                <div class="myTasks" v-if="myTasks.length > 0">
-                    <div class="task" v-for="(task,index) in myCompletedTasks">
-                        
-                    </div>
-                    
-                </div>
-                <div class="noTasks" v-else>
-                    <p>You don't have anything to do, Insert some new tasks 📝</p>
-                </div>
-
-
+                <div class="myCompletedTasks">{{task}}</div>
             </div>
         </main>
             
-           
-           
     </div>
     <!-- VUE JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
