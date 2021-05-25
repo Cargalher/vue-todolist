@@ -21,7 +21,7 @@
                 <img width="300" :src="logo" alt="logo boolean">
             </div>
             <div class="add_task">
-                <input v-model= "newTask" type="text" name="" id="" placeholder="Add new tasks here">
+                <input v-model= "newTask" type="text" name="" id="" placeholder="Add new tasks here"  @keyup.enter="addTask">
                 <button @click= "addTask">Add task</button>
                 <label for="">Add a simple task to do</label>
             </div>
@@ -32,7 +32,7 @@
         <main id="site_main">
 
             <!-- container todo list -->
-            <div class="white_container">
+            <div class="todo_list">
                 <h2>{{title}}</h2>
                 <div class="myTasks" v-if="myTasks.length > 0">
                     <div class="task" v-for="(task,index) in myTasks">
@@ -48,7 +48,7 @@
             </div>
 
             <!-- container tasks completed -->
-            <div class="white_container" v-if="myCompletedTasks.length > 0">
+            <div class="completed_list" v-if="myCompletedTasks.length > 0">
                 <h2>{{title2}}</h2>
                 <div v-for="(task, index) in myCompletedTasks">
                     {{task}} <i class="fas fa-undo fa-sm fa-fw" @click="restoringTask(index,task)"></i>
