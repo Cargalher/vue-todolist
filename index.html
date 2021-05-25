@@ -51,7 +51,7 @@
             <div class="completed_list" v-if="myCompletedTasks.length > 0">
                 <h2>{{title2}}</h2>
                 <div v-for="(task, index) in myCompletedTasks">
-                    {{task}} <i class="fas fa-undo fa-sm fa-fw" @click="restoringTask(index,task)"></i>
+                    {{ task }} <i class="fas fa-undo fa-sm fa-fw" @click="restoringTask(index,task)"></i>
                 </div>
             </div>
 

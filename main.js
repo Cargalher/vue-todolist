@@ -6,16 +6,22 @@ const app = new Vue({
         title: 'Todo List',
         title2: 'Completed',
         newTask: '',
+        error:'',
         myTasks: ['Learn HTML', 'Learn CSS', 'Learn JS', 'Learn Vue'],
         myCompletedTasks: [],
         bin: []
     },
     methods:{
         addTask(){
+            if(this.newTask.length > 3){
             this.myTasks.unshift(this.newTask)
             this.newTask = ''
+            this.error = '' 
+            } else {
+                this.error = 'you must insert at least 3 caracters'
+            }
         },
-        binTask(index){
+        binTask(index,task){
             // console.log('Bin task n.' + index);
             this.myTasks.splice(index,1)
             this.bin.unshift(task)
