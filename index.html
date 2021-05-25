@@ -37,8 +37,8 @@
                 <div class="myTasks" v-if="myTasks.length > 0">
                     <div class="task" v-for="(task,index) in myTasks">
                         <input type="text" v-model="myTasks[index]" v-text="task">
-                        <i class="fas fa-trash" @click="binTask(index)"></i>
-                        <i class="fas fa-check-circle" @click="addFinishedTask(index)"></i>
+                        <i class="fas fa-trash" @click="binTask(index, task)"></i>
+                        <i class="fas fa-check-circle" @click="addFinishedTask(index, task)"></i>
                     </div>
                     
                 </div>
